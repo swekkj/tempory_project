@@ -32,7 +32,7 @@
     <script src="/javascripts/popup.js"></script>
     <style type="text/css">
      button_circle {
-          height:35px;
+          height:35px;  
           width: 35px;
           border-radius: 50%;
           background-color:rgb(0, 0, 0);
@@ -81,6 +81,7 @@
 
                 <div class="meta">
                     <a href="#trailer<%=oneItem.idx%>" data-popup="#trailer<%=oneItem.idx%>" class="layer-popup"><span class="glyphicon glyphicon-film" style="color:#FFF; font-size: 15pt;" size="5"></span></a>
+                    <a href="/shop/detail/<%=oneItem.idx%>" ><span class="glyphicon glyphicon-search" style="color:#FFF; font-size: 15pt;" size="5"></span></a>
                     <h3 class="meta__title"><%=oneItem.name%></h3>
                     <span class="meta__brand"><%=oneItem.company%></span>
                     <span class="meta__price">₩<%=oneItem.price%></span>
@@ -98,66 +99,43 @@
                         <a href="#none" class="btnp-close">팝업창 닫힘</a>
                     </dl>
                 </div>
-                <button class="action action--button action--buy"><i class="fa fa-shopping-cart"></i><span class="text-hidden">Add to cart</span></button>
+                <a href="/shop/<%=oneItem.name%>">
+                    <button class="action action--button action--buy"><i class="fa fa-shopping-cart"></i><span class="text-hidden">Add to cart</span></button>
+                </a>
             </div>
         <%
             }
         %>
-        <div class="pop-wrap" id="login" style="display:none">
-            <dl>
-                <div class="form">
-                    <div class="form-panel one">
-                        <div class="form-header">
-                            <h1>Account Login</h1>
-                        </div>
-                        <div class="form-content">
-                            <form id = "login" action="/shop" method="post">
-                                <div class="form-group">
-                                    <label for="username">Username</label>
-                                    <input type="text" id="username" name="username" required="required"/>
-                                </div>
-                                <div class="form-group">
-                                    <label for="password">Password</label>
-                                    <input type="password" id="password" name="password" required="required"/>
-                                </div>
-                                <div class="form-group">
-                                    <a href="/signup" class="form-recovery">회원가입</a>
-                                    <a href="#" class="form-recovery">Forgot Password?</a>
-                                </div>
-                                <div class="form-group">
-                                    <button type="submit">Log In</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <a href="#none" class="btnp-close">팝업창 닫힘</a>
-            </dl>
-        </div>
         <div class="pop-wrap" id="bucket" style="display:none">
             <div class="main">
-                <div class="main-grid1"></div>
                     <div class="main-grid2">
-                        <h2>My Shopping Bag (3)</h2>
+                        <h2>장바구니</h2>
                         <div class="cart_box">
-                            <div class="message" id="msg<%=title%>">
-                                    <div class="alert-close"> </div>
-                                <div class="list_img"><img src="images/601.png" class="img-responsive" alt=""/></div>
-                                <div class="list_desc"><h4><a href="#">Velit esse molestie</a></h4><span class="actual">
-                                    $30.00</span></div>
+                             <%
+                                for(var i=0; i<bucket.length; i++)
+                                {
+                                    var oneItem = bucket[i];
+                            %>
+                                <div class="message" id="msg<%=oneItem.idx%>">
+                                    <div class="alert-close" id="close<%=oneItem.idx%>"> </div>
+                                    <div class="list_img"><img src="/images/<%=oneItem.image%>" class="img-responsive" alt=""/></div>
+                                    <div class="list_desc"><h4><a href="#"><%=oneItem.name%></a></h4><span class="actual">
+                                            ₩<%=oneItem.price%></span></div>
                                     <div class="clear"></div>
-                            </div>
+                                </div>
+                                <script>
+                                    $(document).ready(function(c) {
+                                        $('#close<%=oneItem.idx%>').on('click', function(c){
+                                            $('#msg<%=oneItem.idx%>').fadeOut('slow', function(c){
+                                                    $('#msg<%=oneItem.idx%>').remove();
+                                            });
+                                        });
+                                    });
+                                </script>
+                            <%
+                                }
+                            %>
                         </div>
-                        <script>
-                        var id = '#message' + '<%=title%>'
-                        $(document).ready(function(c) {
-                            $('.alert-close').on('click', function(c){
-                                $('#msg<%=title%>').fadeOut('slow', function(c){
-                                        $('#msg<%=title%>').remove();
-                                });
-                            });
-                        });
-                        </script>
                         <div class="total">
                             <div class="total-left">
                                 <p>Total :<span> $65</span></p>
@@ -169,6 +147,7 @@
                         </div>
                     </div>
             </div>
+            <a href="#none" class="btnp-close">팝업창 닫힘</a>
         </div>
         </section>
     </div>
@@ -178,7 +157,7 @@
             <button class="action filter__item filter__item--selected" data-filter="*">All</button>
             <button class="action filter__item" data-filter=".rpg"><i class="icon icon--jacket"></i><span class="action__text">RPG</span></button>
             <button class="action filter__item" data-filter=".fights"><i class="icon icon--shirt"></i><span class="action__text">FIGHTS</span></button>
-            <button class="action filter__item" data-filter=".dresses"><i class="icon icon--dress"></i><span class="action__text">AOS</span></button>
+            <button class="action filter__item" data-filter=".aos"><i class="icon icon--dress"></i><span class="action__text">AOS</span></button>
             <button class="action filter__item" data-filter=".simulation"><i class="icon icon--trousers"></i><span class="action__text">SIMULATION</span></button>
             <button class="action filter__item" data-filter=".fps"><i class="icon icon--shoe"></i><span class="action__text">FPS</span></button>
             Welcome <%=user%>
@@ -189,7 +168,7 @@
         <button class="cart">
             <i class="cart__icon fa fa-shopping-cart"></i>
             <span class="text-hidden">Shopping cart</span>
-            <span class="cart__count">0</span>
+            <span class="cart__count"><%=bucket.length%></span>
         </button></a>
     </div>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>

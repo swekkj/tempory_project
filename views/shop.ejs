@@ -79,26 +79,15 @@
                 </div>
 
                 <div class="meta">
-                    <a href="#trailer<%=oneItem.idx%>" data-popup="#trailer<%=oneItem.idx%>" class="layer-popup"><span class="glyphicon glyphicon-film" style="color:#FFF; font-size: 15pt;" size="5"></span></a>
-                    <a href="/shop/detail/<%=oneItem.idx%>" ><span class="glyphicon glyphicon-search" style="color:#FFF; font-size: 15pt;" size="5"></span></a>
+                    <a href="#login" data-popup="#login" class="layer-popup"><span class="glyphicon glyphicon-film" style="color:#FFF; font-size: 15pt;" size="5"></span></a>
+                    <a href="#login" data-popup="#login" class="layer-popup" ><span class="glyphicon glyphicon-search" style="color:#FFF; font-size: 15pt;" size="5"></span></a>
                     <h3 class="meta__title"><%=oneItem.name%></h3>
                     <span class="meta__brand"><%=oneItem.company%></span>
                     <span class="meta__price">₩<%=oneItem.price%></span>
                 </div>
-                <div class="pop-wrap" id="trailer<%=oneItem.idx%>" style="display:none">
-                    <dl>
-                        <dt class="pop-header"><%=oneItem.name%></dt>
-                        <dd class="pop-box">
-                            <div class="pop-cont">
-                                <div class="pop-msg">
-                                        <iframe id="youtube" width="450px" height="250px" src="<%=oneItem.trailer%>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                                </div>
-                            </div>
-                        </dd>
-                        <a href="#none" class="btnp-close">팝업창 닫힘</a>
-                    </dl>
-                </div>
-                <button class="action action--button action--buy"><i class="fa fa-shopping-cart"></i><span class="text-hidden">Add to cart</span></button>
+                <a href="#login" data-popup="#login" class="layer-popup">
+                    <button class="action action--button action--buy"><i class="fa fa-shopping-cart"></i><span class="text-hidden">Add to cart</span></button>
+                </a>
             </div>
         <%
             }
