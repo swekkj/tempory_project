@@ -5,77 +5,124 @@
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <link href='http://fonts.googleapis.com/css?family=Archivo+Narrow:400,700|Open+Sans:400,600,700' rel='stylesheet' type='text/css' />
-<link href="/stylesheets/default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="../../stylesheets/default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="../../stylesheets/button.css" rel="stylesheet" type="text/css" media="all" />
+
 <style>
 .middle {
 	 display: flex;
 	 align-items: center;
 	 justify-content: center;
  }
-</style>
 
+ .ddd{
+ 	background-color: white;
+	display: flex;
+	align-items: center;
+	opacity: 0.3;
+	height: 40px;
+	widows: 70%;
+	margin-bottom: 20px;
+	font-size: 25px;
+
+ }
+ pre{
+ 	overflow: auto;
+	white-space: pre-wrap;
+ }
+}
+.starR.on{background-position:0 0;}
+</style>
 </head>
 <body>
-<img style="background-color: rgb(40,44,52);" width="1500" height="1000" alt="" id="full-screen-background-image" />
+<img src="../../images/<%=rows[0].img1%>"  width="1500" height="1000" alt="" id="full-screen-background-image" />
+<img style="opacity:0.9; background-color: black;" width="1500" height="1000" alt="" id="full-screen-background-image" />
 <div id="wrapper">
-	<div id="header-wrapper">
-		<div id="header" class="container">
-			<div id="logo" class="middle">
-				<font color=white size=6><%=rows[0].name%></font>
-			</div>
-			<div id="menu">
-				<ul>
-					<li class="active"><a href="#" accesskey="1" title="">Homepage</a></li>
-					<li><a href="#" accesskey="2" title="">Our Events</a></li>
-					<li><a href="#" accesskey="3" title="">Gallery</a></li>
-					<li><a href="#" accesskey="4" title="">About Us</a></li>
-					<li><a href="#" accesskey="5" title="">Contact Us</a></li>
-				</ul>
-			</div>
-		</div>
+	<div id="header-wrapper" class="middle">
+		<font color=white size=10><%=rows[0].name%></font>
 	</div>
+
+
 	<div id="page" class="container">
 		<div id="content">
 			<div id="box1">
-				<h2 class="title"><a href="#">Welcome to Pocketing</a></h2>
-				<p>This is <strong>123123</strong>, a free, fully standards-compliant CSS template designed by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.   The photos in this template are from <a href="http://fotogrph.com/"> Fotogrph</a>. This free template is released under the <a href="http://templated.co/license">Creative Commons Attribution</a> license, so you're pretty much free to do whatever you want with it (even use it commercially) provided you give us credit for it. Have fun :) </p>
+				<center>
+					<div id="slideshow">
+						<img src="../../images/<%=rows[0].img1%>" width="450px" height="300px" style="float:center"/>
+						<img src="../../images/<%=rows[0].img2%>" width="450px" height="300px"/>
+						<img src="../../images/<%=rows[0].img3%>" width="450px" height="300px"/>
+					</div>
+					<script src="https://cdn.rawgit.com/pamelafox/a8b77c43f56da1753348/raw/slideshow.js"></script>
+
+			    <script>
+						slideShow(document.getElementById("slideshow"), slideshow=2000);
+			    </script>
+				</center>
 			</div>
+
+
 			<div>
 				<ul class="style1">
+					<div style="margin-bottom:20px;">
+						<font size="6">지금 바로 구매하기!</font>
+						<div class="button-8" style="float:right;">
+								<div class="eff-8"></div>
+								<a href="#"> Buy </a>
+						</div>
+						<div style="float:right"><font size="6" >₩<%=rows[0].price%></font></div>
+					</div>
+
+
+
 					<li class="first">
-						<h3><em><img src="images/img02.jpg" alt="" width="130" height="130" class="alignleft border" /></em>Lorem ipsum dolor interdum</h3>
-						<p>Ut vel nisl tristique justo ornare iaculis. Suspendisse suscipit, orci ac interdum viverra, nulla orci facilisis mi, a ultrices mi lectus vitae felis. Morbi suscipit adipiscing orci et blandit. Morbi a nulla ut tellus blandit placerat a quis eros.</p>
+						<h2>최근 사용자 평가</h2>
+						<pre><%=rows[0].evaluation%></pre>
 						<p><a href="#" class="button-style">Read More</a></p>
 					</li>
+
 					<li>
-						<h3><em><img src="images/img03.jpg" alt="" width="130" height="130" class="alignleft border" /></em>Magna phasellus etiam ultrices</h3>
-						<p>Ut vel nisl tristique justo ornare iaculis. Suspendisse suscipit, orci ac interdum viverra, nulla orci facilisis mi, a ultrices mi lectus vitae felis. Morbi suscipit adipiscing orci et blandit. Morbi a nulla ut tellus blandit placerat a quis eros.</p>
-						<p><a href="#" class="button-style">Read More</a></p>
+						<h2>About Game</h2>
+						<pre><%=rows[0].about%></pre>
 					</li>
 				</ul>
 			</div>
 		</div>
+
+
+
 		<div id="sidebar">
-			<h2>Fusce ultrices</h2>
+
 			<ul class="style3">
 				<li class="first">
-					<p class="date">01-14-2013</p>
-					<p><a href="#">Vestibulum laoreet lorem sed amet condimentum eget ultrices et mago porttitor nequese blandit.</a></p>
+					<h3>지원 언어</h3>
+					<p><%=rows[0].language%></p>
+				</li>
+
+				<li>
+					<h3>출시일</h3>
+					<pre><%=rows[0].date%></pre>
 				</li>
 				<li>
-					<p class="date">01-13-2013</p>
-					<p><a href="#">Vestibulum laoreet lorem sed amet condimentum eget ultrices et mago porttitor nequese blandit.</a></p>
+					<h3>장르</h3>
+					<p><%=rows[0].genre%></p>
 				</li>
+
 				<li>
-					<p class="date">01-07-2013</p>
-					<p><a href="#">Vestibulum laoreet lorem sed amet condimentum eget ultrices et mago porttitor nequese blandit.</a></p>
+					<h3>최소 사양</h3>
+					<pre><%=rows[0].condi%></pre>
 				</li>
+
+				<li>
+					<p>개발사 : <%=rows[0].company%></p>
+					<p>배급사 : <%=rows[0].publisher%></p>
+				</li>
+
 			</ul>
 		</div>
 	</div>
-	<div id="footer">
-		<p>&copy; Untitled. All rights reserved. Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>. Photos by <a href="http://fotogrph.com/">Fotogrph</a>.</p>
-	</div>
 </div>
+
+
+
 </body>
 </html>
