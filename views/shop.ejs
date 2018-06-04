@@ -36,7 +36,6 @@
           width: 35px;
           border-radius: 50%;
           background-color:rgb(0, 0, 0);
-          padding-left: 11px;
           padding-top: 11px;
           margin-left:8px;
           font-color:#FFF;
@@ -80,12 +79,12 @@
                 </div>
 
                 <div class="meta">
-                    <a href="#<%=oneItem.name%>_trailer" data-popup="#<%=oneItem.name%>_trailer" class="layer-popup"><span class="glyphicon glyphicon-film" style="color:#FFF; font-size: 15pt;" size="5"></span></a>
+                    <a href="#trailer<%=oneItem.idx%>" data-popup="#trailer<%=oneItem.idx%>" class="layer-popup"><span class="glyphicon glyphicon-film" style="color:#FFF; font-size: 15pt;" size="5"></span></a>
                     <h3 class="meta__title"><%=oneItem.name%></h3>
                     <span class="meta__brand"><%=oneItem.company%></span>
                     <span class="meta__price">₩<%=oneItem.price%></span>
                 </div>
-                <div class="pop-wrap" id="<%=oneItem.name%>_trailer" style="display:none">
+                <div class="pop-wrap" id="trailer<%=oneItem.idx%>" style="display:none">
                     <dl>
                         <dt class="pop-header"><%=oneItem.name%></dt>
                         <dd class="pop-box">
@@ -145,8 +144,8 @@
             <button class="action filter__item" data-filter=".dresses"><i class="icon icon--dress"></i><span class="action__text">AOS</span></button>
             <button class="action filter__item" data-filter=".simulation"><i class="icon icon--trousers"></i><span class="action__text">SIMULATION</span></button>
             <button class="action filter__item" data-filter=".fps"><i class="icon icon--shoe"></i><span class="action__text">FPS</span></button>
-            <a href="/signup"><button_circle type="button" class="glyphicon glyphicon-user" style="float:right" ></button_circle></a>
-            <a href="#login" data-popup="#login" class="layer-popup">
+            <a href="/signup" style="color:#5c5edc"><button_circle type="button" class="glyphicon glyphicon-user" style="float:right" ></button_circle></a>
+            <a href="#login"style="color:#5c5edc" data-popup="#login" class="layer-popup">
                 <button_circle type="button" class="glyphicon glyphicon-log-in" style="float:right"></button_circle>
             </a>
         </div>
