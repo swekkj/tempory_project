@@ -35,19 +35,17 @@ router.get('/', function(req, res, next) {
     });
   });
 });
-/*
-router.get('/:name',(req,res,next)=>{
-  var idx = req.params.name;
-  console.log(idx);
-  pool.getConnection((err,conn)=>{
-    if(err) console.error("connection err : "+err);
-    var sqlQuery = "SELECT * FROM game_detail WHERE name=?";
-    conn.query(sqlQuery, [idx], (err,rows)=>{
-      if(err) console.error("query err : " + err);
-      console.log(rows[0]);
-      res.render('detail',{title:"detail",row:rows[0]});
-      conn.release();
+
+router.get('/detail/:idx',function(req,res,next){
+  pool.getConnection(function(err,conn){
+    if(err) console.error("poll connection error : " + err);
+    var idx = req.params.idx;
+    var sql = "select * from game where idx=?";
+    conn.query(sql,[idx],function(err, rows){
+      res.render('detail',{rows:rows});
     });
   });
-});*/
+});
+
+
 module.exports = router;
