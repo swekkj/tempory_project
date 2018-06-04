@@ -139,23 +139,23 @@
                 <div class="main-grid1"></div>
                     <div class="main-grid2">
                         <h2>My Shopping Bag (3)</h2>
-                        <div class="cart_box">
-                            <div class="message" id="msg<%=title%>">
-                                    <div class="alert-close"> </div>
-                                <div class="list_img"><img src="images/601.png" class="img-responsive" alt=""/></div>
-                                <div class="list_desc"><h4><a href="#">Velit esse molestie</a></h4><span class="actual">
-                                    $30.00</span></div>
-                                    <div class="clear"></div>
-                            </div>
-                        </div>
+                        <div class="cart_box1">
+                					<div class="message" id="msg<%=title%>">
+                						 <div class="alert-close"> </div>
+                						<div class="list_img"><img src="images/601.png" class="img-responsive" alt=""/></div>
+                						<div class="list_desc"><h4><a href="#">Velit esse molestie</a></h4><span class="actual">
+                						 $30.00</span></div>
+                						  <div class="clear"></div>
+                					</div>
+                				</div>
                         <script>
                         var id = '#message' + '<%=title%>'
                         $(document).ready(function(c) {
-                            $('.alert-close').on('click', function(c){
-                                $('#msg<%=title%>').fadeOut('slow', function(c){
-                                        $('#msg<%=title%>').remove();
-                                });
+                          $('.alert-close').on('click', function(c){
+                            $('#msg<%=title%>').fadeOut('slow', function(c){
+                                $('#msg<%=title%>').remove();
                             });
+                          });
                         });
                         </script>
                         <div class="total">
@@ -163,12 +163,13 @@
                                 <p>Total :<span> $65</span></p>
                             </div>
                             <div class="total-right">
-                                <a href="#">주문 하기</a>
+                                <a href="/order">주문 하기</a>
                             </div>
                             <div class="clear"> </div>
                         </div>
                     </div>
             </div>
+            <a href="#none" class="btnp-close">팝업창 닫힘</a>
         </div>
         </section>
     </div>
@@ -184,7 +185,7 @@
             Welcome <%=user%>
             <a href="/shop"><button_circle type="button" class="lyphicon glyphicon-off" style="float:right" ></button_circle></a>
         </div>
-            
+
         <a href="#bucket" data-popup="#bucket" class="layer-popup">
         <button class="cart">
             <i class="cart__icon fa fa-shopping-cart"></i>

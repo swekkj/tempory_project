@@ -218,7 +218,7 @@ hr {
 }
 
 #paybtn li {
-	float: left;  
+	float: left;
 	padding: 10px;
 	margin-right: 1px;
 }
@@ -240,8 +240,8 @@ ul.style1 li {
 }
 
 ul.style1 h3 {
-	padding-bottom: 5px;
-	font-size: 14px;
+	padding-bottom: 15px;
+	font-size: 40px;
 	color: #FFFFFF;
 }
 
