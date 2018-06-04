@@ -1,51 +1,81 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js"></html>
+<html>
 <head>
-    <meta charset="UTF-8" />
-    <!-- 합쳐지고 최소화된 최신 CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href='http://fonts.googleapis.com/css?family=Archivo+Narrow:400,700|Open+Sans:400,600,700' rel='stylesheet' type='text/css' />
+<link href="/stylesheets/default.css" rel="stylesheet" type="text/css" media="all" />
+<style>
+.middle {
+	 display: flex;
+	 align-items: center;
+	 justify-content: center;
+ }
+</style>
 
-    <!-- 부가적인 테마 -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-    <title>Software Engineering WebSite</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-
-    <link rel="shortcut icon" href="/images/favicon.ico">
-    <!-- import css -->
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-
-    <link rel="stylesheet" type="text/css" href="/fonts/pixelfabric-clothes/style.css" />
-    <link rel="stylesheet" type="text/css" href="/stylesheets/demo.css" />
-    <link rel="stylesheet" type="text/css" href="/stylesheets/flickity.css" />
-    <link rel="stylesheet" type="text/css" href="/stylesheets/component.css" />
-    <link rel="stylesheet" type="text/css" href="/stylesheets/popup.css" />
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <script src="/javascripts/modernizr.custom.js"></script>
-    <script src="/javascripts/popup.js"></script>
-    <header class="bp-header cf">
-            <span>ProtoType</span>
-            <h1>Software Engineering WebSite</h1>
-        </header>
-  </head>
 </head>
 <body>
-<%= row.name %><br>
-<%= row.price %><br>
-<%= row.date %><br>
-<%= row.img1 %><br>
-<%= row.img2 %><br>
-<%= row.img3 %><br>
-<%= row.img4 %><br>
-<%= row.trailer %><br>
-<%= row.genre %><br>
-<%= row.publisher %><br>
-<%= row.company %><br>
-<%= row.language %><br>
-<%= row.condi %><br>
-<%= row.description %><br>
-        
+<img style="background-color: rgb(40,44,52);" width="1500" height="1000" alt="" id="full-screen-background-image" />
+<div id="wrapper">
+	<div id="header-wrapper">
+		<div id="header" class="container">
+			<div id="logo" class="middle">
+				<font color=white size=6><%=rows[0].name%></font>
+			</div>
+			<div id="menu">
+				<ul>
+					<li class="active"><a href="#" accesskey="1" title="">Homepage</a></li>
+					<li><a href="#" accesskey="2" title="">Our Events</a></li>
+					<li><a href="#" accesskey="3" title="">Gallery</a></li>
+					<li><a href="#" accesskey="4" title="">About Us</a></li>
+					<li><a href="#" accesskey="5" title="">Contact Us</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div id="page" class="container">
+		<div id="content">
+			<div id="box1">
+				<h2 class="title"><a href="#">Welcome to Pocketing</a></h2>
+				<p>This is <strong>123123</strong>, a free, fully standards-compliant CSS template designed by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.   The photos in this template are from <a href="http://fotogrph.com/"> Fotogrph</a>. This free template is released under the <a href="http://templated.co/license">Creative Commons Attribution</a> license, so you're pretty much free to do whatever you want with it (even use it commercially) provided you give us credit for it. Have fun :) </p>
+			</div>
+			<div>
+				<ul class="style1">
+					<li class="first">
+						<h3><em><img src="images/img02.jpg" alt="" width="130" height="130" class="alignleft border" /></em>Lorem ipsum dolor interdum</h3>
+						<p>Ut vel nisl tristique justo ornare iaculis. Suspendisse suscipit, orci ac interdum viverra, nulla orci facilisis mi, a ultrices mi lectus vitae felis. Morbi suscipit adipiscing orci et blandit. Morbi a nulla ut tellus blandit placerat a quis eros.</p>
+						<p><a href="#" class="button-style">Read More</a></p>
+					</li>
+					<li>
+						<h3><em><img src="images/img03.jpg" alt="" width="130" height="130" class="alignleft border" /></em>Magna phasellus etiam ultrices</h3>
+						<p>Ut vel nisl tristique justo ornare iaculis. Suspendisse suscipit, orci ac interdum viverra, nulla orci facilisis mi, a ultrices mi lectus vitae felis. Morbi suscipit adipiscing orci et blandit. Morbi a nulla ut tellus blandit placerat a quis eros.</p>
+						<p><a href="#" class="button-style">Read More</a></p>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div id="sidebar">
+			<h2>Fusce ultrices</h2>
+			<ul class="style3">
+				<li class="first">
+					<p class="date">01-14-2013</p>
+					<p><a href="#">Vestibulum laoreet lorem sed amet condimentum eget ultrices et mago porttitor nequese blandit.</a></p>
+				</li>
+				<li>
+					<p class="date">01-13-2013</p>
+					<p><a href="#">Vestibulum laoreet lorem sed amet condimentum eget ultrices et mago porttitor nequese blandit.</a></p>
+				</li>
+				<li>
+					<p class="date">01-07-2013</p>
+					<p><a href="#">Vestibulum laoreet lorem sed amet condimentum eget ultrices et mago porttitor nequese blandit.</a></p>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div id="footer">
+		<p>&copy; Untitled. All rights reserved. Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>. Photos by <a href="http://fotogrph.com/">Fotogrph</a>.</p>
+	</div>
+</div>
 </body>
 </html>
