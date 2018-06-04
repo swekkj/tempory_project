@@ -78,12 +78,12 @@
                 </div>
 
                 <div class="meta">
-                    <a href="#<%=oneItem.name%>_trailer" data-popup="#<%=oneItem.name%>_trailer" class="layer-popup"><span class="glyphicon glyphicon-film" style="color:#FFF; font-size: 15pt;" size="5"></span></a>
+                    <a href="#trailer<%=oneItem.idx%>" data-popup="#trailer<%=oneItem.idx%>" class="layer-popup"><span class="glyphicon glyphicon-film" style="color:#FFF; font-size: 15pt;" size="5"></span></a>
                     <h3 class="meta__title"><%=oneItem.name%></h3>
                     <span class="meta__brand"><%=oneItem.company%></span>
                     <span class="meta__price">₩<%=oneItem.price%></span>
                 </div>
-                <div class="pop-wrap" id="<%=oneItem.name%>_trailer" style="display:none">
+                <div class="pop-wrap" id="trailer<%=oneItem.idx%>" style="display:none">
                     <dl>
                         <dt class="pop-header"><%=oneItem.name%></dt>
                         <dd class="pop-box">
