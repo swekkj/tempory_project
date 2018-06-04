@@ -18,7 +18,7 @@ router.post('/', function(req, res, next){
   var passwd = req.body.password;
   var birth = req.body.birth;
   var email = req.body.email;
-  var property = "buyer"
+  var property = "buyer";
   var data = [id, passwd, birth, email, property];
 
   pool.getConnection(function(err, conn){

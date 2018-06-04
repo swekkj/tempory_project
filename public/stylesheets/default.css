@@ -16,7 +16,6 @@ body {
 
 
 h1, h2, h3 {
-  color: #FFFFFF;
 	margin: 0;
 	padding: 0;
 }
@@ -26,11 +25,6 @@ h2
 	font-weight: 400;
 	font-family: 'Archivo Narrow', sans-serif;
 	font-size: 2.50em;
-}
-
-pre{
-  font-family: 'Open Sans', sans-serif;
-	font-size: 10pt;
 }
 
 p, ol, ul {
@@ -216,8 +210,8 @@ hr {
 
 #sidebar {
 	float: right;
-	width: 230px;
-	padding: 30px;
+	width: 220px;
+	padding: 40px;
 	background: rgba(0,0,0,0.70);
 }
 
@@ -227,6 +221,22 @@ hr {
 	color: #FFFFFF;
 }
 
+/* Footer */
+
+#footer {
+	overflow: hidden;
+	margin: 20px auto 0px auto;
+	padding: 20px 0px;
+	background: rgba(0,0,0,0.70);
+}
+
+#footer p {
+	text-align: center;
+	font-size: 12px;
+}
+
+#footer a {
+}
 
 /** LIST STYLE 1 */
 
