@@ -39,6 +39,20 @@ router.post('/',function(req,res,next){
     });
   });
 });
+router.get('/', function(req,res,next){
+    pool.getConnection(function(err, conn){
+        if(err) console.error("pool error : " + err);
+            conn.query("SELECT * FROM game", function(err,game_rows){
+              if(err) console.error("game list query error : " + err);
+              conn.query("SELECT * FROM bucket",function(err,bucket_rows)
+              {
+                if(err) console.error("bucket query error : "+err);
+                res.render('login_shop',{title: 'Shop', rows: game_rows, user:username, bucket:bucket_rows});
+                conn.release();
+              });
+            });
+      });
+});
 
 router.get('/:idx',function(req,res,next){
     var idx = req.params.idx;
