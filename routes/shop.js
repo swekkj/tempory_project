@@ -5,10 +5,11 @@ var mysql = require('mysql');
 var pool = mysql.createPool({
   host: 'localhost',
   user: 'root',
-  password: 'PASSWORD',
+  password: 'chlwodms*1',
   database: 'swe',
   connectionLimit: 5,
 });
+
 router.get('/', function(req, res, next) {
   pool.getConnection(function(err,conn){
     if(err) console.error("poll connection error : " + err);
@@ -47,6 +48,20 @@ router.get('/:name',function(req,res,next){
     });
   });
 });
+
+
+router.get('/detail/bucket/:idx', function(req, res, next){
+  var name = req.params.idx;
+  console.log("123" + name);
+  pool.getConnection(function(err, conn){
+    var sql = "insert into bucket(name,price,image,idx) select name,price,img1,idx from game where idx=?";
+    conn.query(sql,[name],function(err,rows){
+      if(err) console.error("insert error : " + err);
+      res.redirect('/order');
+    });
+  });
+});
+
 router.get('/detail/:idx',function(req,res,next){
   pool.getConnection(function(err,conn){
     if(err) console.error("poll connection error : " + err);
