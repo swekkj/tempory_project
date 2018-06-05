@@ -27,21 +27,31 @@
 			<div>
 				<ul class="style1">
 					<li class="first">
-						<h3><em><img src="images/601.png" alt="" width="130" height="130" class="alignleft border" /></em>60!</h3>
-						<p>\가격 얼마</p>
-						<p><a href="#" class="button-style">상세 보기</a></p>
+						<h3><em><img src="images/<%=bucketList[0].image%>" alt="" width="130" height="130" class="alignleft border" /></em><%=bucketList[0].name%></h3>
+						<p>₩<%=bucketList[0].price%></p>
+						<p><a href="/shop/detail/<%=bucketList[0].idx%>" class="button-style">상세 보기</a></p>
 					</li>
-					<li>
-						<h3><em><img src="images/rs1.png" alt="" width="130" height="130" class="alignleft border" /></em>Rainbow Six "Siege"</h3>
-						<p>\가격 얼마</p>
-						<p><a href="#" class="button-style">상세 보기</a></p>
-					</li>
+					<%
+						var price=0;
+						for(var i=1; i<bucketList.length; i++)
+						{
+							var oneItem = bucketList[i];
+							price += oneItem.price;
+					%>
+						<li>
+							<h3><em><img src="images/<%=oneItem.image%>" alt="" width="130" height="130" class="alignleft border" /></em><%=oneItem.name%></h3>
+							<p>₩<%=oneItem.price%></p>
+							<p><a href="/shop/detail/<%=oneItem.idx%>" class="button-style">상세 보기</a></p>
+						</li>
+					<%
+						}
+					%>
 				</ul>
 			</div>
 		</div>
 		<div id="sidebar">
 			<h2>결제 하기</h2>
-			<h2>Total : 12345</h2>
+			<h2>Total : ₩<%=price%></h2>
 			<ul class="style3">
 				<li class="first">
 					<p><input type="radio" name="chk">신용/체크카드 결제</p>
