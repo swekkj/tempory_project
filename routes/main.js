@@ -9,9 +9,10 @@ var pool = mysql.createPool({
   database: 'swe',
   connectionLimit: 5,
 });
+var username;
 /* GET home page. */
 router.post('/',function(req,res,next){
-    var username = req.body.username;
+    username = req.body.username;
     var cmp = req.body.password;
     console.log(username);
     console.log(cmp);
@@ -39,4 +40,28 @@ router.post('/',function(req,res,next){
   });
 });
 
+router.get('/:idx',function(req,res,next){
+    var idx = req.params.idx;
+    pool.getConnection(function(err,conn){
+        if(err) console.error("poll connection error : " + err);
+        conn.query("select * from bucket where idx=?",[idx],function(err,rows){
+            if(err) console.error("search error" + err);
+                console.log(rows);
+                if(rows.length == 0)
+                {
+                    var sql = "INSERT INTO bucket(name, image, price, idx) SELECT name, img1, price, idx FROM game WHERE idx=?";
+                    conn.query(sql,[idx],(err,rows) => {
+                    if(err)console.error("insert error : " + err);
+                        conn.query("SELECT * from game",(err,gameRows)=>{
+                            if(err)console.error("find game table error : " + err);
+                            conn.query("SELECT * from bucket",(err,bucketRows)=>{
+                                if(err)console.error("find bucket table error : " + err);
+                                res.render('login_shop',{title:"login",user:username,rows:gameRows,bucket:bucketRows});
+                            });
+                        });
+                    });
+                }
+        });
+    });
+});
 module.exports = router;
