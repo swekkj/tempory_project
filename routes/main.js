@@ -18,20 +18,21 @@ router.post('/',function(req,res,next){
     console.log(cmp);
 
     pool.getConnection(function(err, conn){
-      var sql = "SELECT passwd FROM user_data where id=?";
+      var sql = "SELECT * FROM user_data where id=?";
       conn.query(sql,[username], function(err, result){
         if(err) console.error("find user err : "+err);
-        if(result.length==0) res.send("not user");
+        if(result.length==0) res.redirect("/shop");
         else if(cmp!=result[0].passwd)  // passwd 찾았고 다름
-        {res.send("passwd error");}
+        {res.redirect("/shop");}
         else
         {
+          var user_prop = result[0].property;
           conn.query("SELECT * FROM game", function(err,game_rows){
             if(err) console.error("game list query error : " + err);
             conn.query("SELECT * FROM bucket",function(err,bucket_rows)
             {
               if(err) console.error("bucket query error : "+err);
-              res.render('login_shop',{title: 'Shop', rows: game_rows, user:username, bucket:bucket_rows});
+              res.render('login_shop',{title: 'Shop', rows: game_rows, user:username, bucket:bucket_rows, prop:user_prop});
               conn.release();
             });
           });
@@ -63,7 +64,7 @@ router.get('/:idx',function(req,res,next){
                 console.log(rows);
                 if(rows.length == 0)
                 {
-                    var sql = "INSERT INTO bucket(name, image, price, idx) SELECT name, img1, price, idx FROM game WHERE idx=?";
+                    var sql = "INSERT INTO bucket(name, image, price, idx) SELECT name, img, price, idx FROM game WHERE idx=?";
                     conn.query(sql,[idx],(err,rows) => {
                     if(err)console.error("insert error : " + err);
                         conn.query("SELECT * from game",(err,gameRows)=>{
