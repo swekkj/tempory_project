@@ -41,6 +41,51 @@
           margin-left:8px;
           font-color:#FFF;
       }
+
+
+      .button-8:hover .eff-8{
+        border:0px solid rgb(0,0,0);
+      }
+      .button-8:hover {
+          border:0px solid rgb(0,0,0);
+      }
+      .button-8:hover a{
+        color:rgb(102,130,3);
+      }
+      .button-8{
+        width:80px;
+        height:40px;
+        border:2px solid rgb(102,130,3);
+        float:left;
+        text-align:center;
+        cursor:pointer;
+        position:relative;
+        box-sizing:border-box;
+        overflow:hidden;
+        margin-left:16px;
+      }
+      .button-8 a{
+        font-family:arial;
+        font-size:16px;
+        color:#fff;
+        text-decoration:none;
+        line-height:40px;
+        transition:all .5s ease;
+        z-index:2;
+        position:relative;
+      }
+      .button-style
+      {
+      	display: inline-block;
+      	background-color: #1F768D;
+      	padding: 5px 30px;
+      	height: 24px;
+        width: auto;
+      	line-height: 24px;
+      	text-decoration: none;
+      	text-align: center;
+      	color: #FFFFFF;
+      }
       .mfp-no-margins img.mfp-img {
 	    padding: 0;
         }
@@ -115,8 +160,7 @@
                                 for(var i=0; i<bucket.length; i++)
                                 {
                                     var oneItem = bucket[i];
-                                    var total = 0;
-                             %>
+                            %>
                                 <div class="message" id="msg<%=oneItem.idx%>">
                                     <div class="alert-close" id="close<%=oneItem.idx%>"> </div>
                                     <div class="list_img"><img src="/images/<%=oneItem.image%>" class="img-responsive" alt=""/></div>
@@ -134,13 +178,12 @@
                                     });
                                 </script>
                             <%
-                                total += oneItem.price;
                                 }
                             %>
                         </div>
                         <div class="total">
                             <div class="total-left">
-                                <p>Total :<span> ₩<%=total%></span></p>
+                                <p>Total :<span> $65</span></p>
                             </div>
                             <div class="total-right">
                                 <a href="/order">주문 하기</a>
@@ -162,8 +205,11 @@
             <button class="action filter__item" data-filter=".aos"><i class="icon icon--dress"></i><span class="action__text">AOS</span></button>
             <button class="action filter__item" data-filter=".simulation"><i class="icon icon--trousers"></i><span class="action__text">SIMULATION</span></button>
             <button class="action filter__item" data-filter=".fps"><i class="icon icon--shoe"></i><span class="action__text">FPS</span></button>
-            Welcome <%=user%>
-            <a href="/shop"><button_circle type="button" class="lyphicon glyphicon-off" style="float:right" ></button_circle></a>
+            Welcome &nbsp;&nbsp;<span style="font-weight:bold; text-decoration:underline;"><%=user%></span>
+            <div class="button-8" style="margins-left:8px;">
+								<div class="eff-8"></div>
+								<a href="/shop"> Logout </a>
+						</div>
         </div>
 
         <a href="#bucket" data-popup="#bucket" class="layer-popup">
