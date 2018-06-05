@@ -5,11 +5,12 @@ var mysql = require('mysql');
 var pool = mysql.createPool({
   host: 'localhost',
   user: 'root',
-  password: 'root',
+  password: 'PASSWORD',
   database: 'swe',
   connectionLimit: 5,
 });
 var username;
+var user_prop;
 /* GET home page. */
 router.post('/',function(req,res,next){
     username = req.body.username;
@@ -26,7 +27,7 @@ router.post('/',function(req,res,next){
         {res.redirect("/shop");}
         else
         {
-          var user_prop = result[0].property;
+          user_prop = result[0].property;
           conn.query("SELECT * FROM game", function(err,game_rows){
             if(err) console.error("game list query error : " + err);
             conn.query("SELECT * FROM bucket",function(err,bucket_rows)
@@ -48,7 +49,7 @@ router.get('/', function(req,res,next){
               conn.query("SELECT * FROM bucket",function(err,bucket_rows)
               {
                 if(err) console.error("bucket query error : "+err);
-                res.render('login_shop',{title: 'Shop', rows: game_rows, user:username, bucket:bucket_rows});
+                res.render('login_shop',{title: 'Shop', rows: game_rows, user:username, bucket:bucket_rows, prop:user_prop});
                 conn.release();
               });
             });
@@ -71,7 +72,7 @@ router.get('/:idx',function(req,res,next){
                             if(err)console.error("find game table error : " + err);
                             conn.query("SELECT * from bucket",(err,bucketRows)=>{
                                 if(err)console.error("find bucket table error : " + err);
-                                res.render('login_shop',{title:"login",user:username,rows:gameRows,bucket:bucketRows});
+                                res.render('login_shop',{title:"login",user:username,rows:gameRows,bucket:bucketRows, prop:user_prop});
                             });
                         });
                     });
