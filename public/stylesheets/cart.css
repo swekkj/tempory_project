@@ -149,32 +149,6 @@ span.actual {
     -o-transition: color 0.2s ease-in-out;
     transition: color 0.2s ease-in-out;
 }
-.alert-close1 {
-	background: url('../images/2.png') no-repeat 0px 0px;
-    cursor: pointer;
-    height: 24px;
-    width: 24px;
-    position: absolute;
-    right: 95px;
-    top: 25px;
-    -webkit-transition: color 0.2s ease-in-out;
-    -moz-transition: color 0.2s ease-in-out;
-    -o-transition: color 0.2s ease-in-out;
-    transition: color 0.2s ease-in-out;
-}
-.alert-close2 {
-	background: url('../images/2.png') no-repeat 0px 0px;
-    cursor: pointer;
-    height: 24px;
-    width: 24px;
-    position: absolute;
-	right: 95px;
-    top: 25px;
-    -webkit-transition: color 0.2s ease-in-out;
-    -moz-transition: color 0.2s ease-in-out;
-    -o-transition: color 0.2s ease-in-out;
-    transition: color 0.2s ease-in-out;
-}
 .total{
 	padding:2em 0 4em;
     width: 88%;
