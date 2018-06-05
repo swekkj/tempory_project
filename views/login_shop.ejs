@@ -162,6 +162,7 @@
                                 for(var i=0; i<bucket.length; i++)
                                 {
                                     var oneItem = bucket[i];
+                                    var total = 0;
                             %>
                                 <div class="message" id="msg<%=oneItem.idx%>">
                                     <div class="alert-close" id="close<%=oneItem.idx%>"> </div>
@@ -180,12 +181,13 @@
                                     });
                                 </script>``
                             <%
+                               total += oneItem.price;
                                 }
                             %>
                         </div>
                         <div class="total">
                             <div class="total-left">
-                                <p>Total :<span> $65</span></p>
+                                <p>Total :<span> ₩<%=total%></span></p>
                             </div>
                             <div class="total-right">
                                 <a href="/order">주문 하기</a>
@@ -219,7 +221,7 @@
 								<div class="eff-8"></div>
 								<a href="/shop"> Logout </a>
             </div>
-            
+
         </div>
 
         <a href="#bucket" data-popup="#bucket" class="layer-popup">
