@@ -208,10 +208,18 @@
             <button class="action filter__item" data-filter=".simulation"><i class="icon icon--trousers"></i><span class="action__text">SIMULATION</span></button>
             <button class="action filter__item" data-filter=".fps"><i class="icon icon--shoe"></i><span class="action__text">FPS</span></button>
             Welcome &nbsp;&nbsp;<span style="font-weight:bold; text-decoration:underline;"><%=user%></span>
+            <%
+                if(prop == "seller"){
+            %>
+                <a href="/add" id="add_btn" style="color:#5c5edc"><button_add type="button" class="glyphicon glyphicon-plus" style="float:right"></button_add></a>
+            <%
+                }
+            %>
             <div class="button-8" style="margins-left:8px;">
 								<div class="eff-8"></div>
 								<a href="/shop"> Logout </a>
-						</div>
+            </div>
+            
         </div>
 
         <a href="#bucket" data-popup="#bucket" class="layer-popup">
