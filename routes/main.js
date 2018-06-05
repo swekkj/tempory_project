@@ -63,7 +63,7 @@ router.get('/:idx',function(req,res,next){
                 console.log(rows);
                 if(rows.length == 0)
                 {
-                    var sql = "INSERT INTO bucket(name, image, price, idx) SELECT name, img1, price, idx FROM game WHERE idx=?";
+                    var sql = "INSERT INTO bucket(name, image, price, idx) SELECT name, img, price, idx FROM game WHERE idx=?";
                     conn.query(sql,[idx],(err,rows) => {
                     if(err)console.error("insert error : " + err);
                         conn.query("SELECT * from game",(err,gameRows)=>{
