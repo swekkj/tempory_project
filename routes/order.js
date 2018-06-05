@@ -4,11 +4,23 @@ var mysql = require('mysql');
 var pool = mysql.createPool({
   host: 'localhost',
   user: 'root',
-  password: 'root',
+  password: 'PASSWORD',
   database: 'swe',
   connectionLimit: 5,
 });
 /* GET home page. */
+
+router.get('/finish',function(req,res,next){
+  pool.getConnection(function(err, conn){
+    if(err) console.error("pool connect error : " + err);
+    var sql = "DELETE FROM bucket";
+    conn.query(sql,function(err, result){
+      if(err) console.error('query connect error : ' + err);
+      res.redirect('/main');
+      conn.release();
+    });
+  });
+})
 router.get('/', function(req, res, next) {
   pool.getConnection(function(err, conn){
     if(err) console.error("pool connect error : " + err);
