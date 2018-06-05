@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Order</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href='http://fonts.googleapis.com/css?family=Archivo+Narrow:400,700|Open+Sans:400,600,700' rel='stylesheet' type='text/css' />
+<link href="/stylesheets/add.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+<body>
+<div id="wrapper">
+	<div id="header-wrapper">
+		<div id="header" class="container">
+			<h1 id="logo">상품 추가</h1>
+		</div>
+	</div>
+	<div id="page" class="container">
+		<div id="content">
+      <div class="form" >
+        <div class="form-panel one">
+          <div class="form-content">
+            <form id="signup" action="/add" method="post">
+              <div class="form-group">
+                <label for="name">게임 제목</label>
+                <input type="text" id="name" name="name" required="required"/>
+              </div>
+              <div class="form-group">
+                <label for="price">가격</label>
+                <input type="text" id="price" name="price" required="required"/>
+              </div>
+              <div class="form-group">
+                <label for="img">이미지</label>
+                <input type="text" id="img" name="img" required="required"/>
+              </div>
+              <div class="form-group">
+                <label for="property">장르</label>
+                <input type="text" id="property" name="property" required="required"/>
+              </div>
+              <div class="form-group">
+                <label for="trailer">트레일러 (Embed)</label>
+                <input type="text" id="trailer" name="trailer" required="required"/>
+              </div>
+              <div class="form-group">
+                <label for="date">출시 일자</label>
+                <input type="text" id="date" name="date" required="required"/>
+              </div>
+              <div class="form-group">
+                <label for="company">Company</label>
+                <input type="text" id="company" name="company" required="required"/>
+              </div>
+              <div class="form-group">
+                <label for="publisher">Publisher</label>
+                <input type="text" id="publisher" name="publisher" required="required"/>
+              </div>
+              <div class="form-group">
+                <label for="language">언어</label>
+                <input type="text" id="language" name="language" required="required"/>
+              </div>
+              <div class="form-group">
+                <label for="condi">최소 사양</label>
+                <input type="text" id="condi" name="condi" required="required"/>
+              </div>
+              <div class="form-group">
+                <label for="description">간략한 설명</label>
+                <input type="text" id="description" name="description" required="required"/>
+              </div>
+              <div class="form-group">
+                <label for="evaluation">최근 평가</label>
+                <input type="text" id="evaluation" name="evaluation" required="required"/>
+              </div>
+              <div class="form-group">
+                <label for="about">게임 설명</label>
+                <input type="text" id="about" name="about" required="required"/>
+              </div>
+              <div class="form-group">
+                <button type="submit" >등록 하기</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
