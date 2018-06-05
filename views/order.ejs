@@ -32,7 +32,7 @@
 						<p><a href="/shop/detail/<%=bucketList[0].idx%>" class="button-style">상세 보기</a></p>
 					</li>
 					<%
-						var price=0;
+						var price=bucketList[0].price;
 						for(var i=1; i<bucketList.length; i++)
 						{
 							var oneItem = bucketList[i];
