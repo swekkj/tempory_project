@@ -23,16 +23,17 @@ router.post('/', function(req, res, next){
   var company = req.body.company;
   var publisher = req.body.publisher;
   var language = req.body.language;
+  var genre = req.body.genre;
   var condi = req.body.condi;
   var description = req.body.description;
   var evaluation = req.body.evaluation;
   var about = req.body.about;
 
-  var data = [name, price, img, property, trailer, date, company, publisher, language, condi, description, evaluation, about];
+  var data = [name, price, img, property, trailer, date, company, publisher, language, genre, condi, description, evaluation, about];
 
   pool.getConnection(function(err, conn){
     if(err) console.error("join router error : "+ err);
-    var q = "insert into game(name, price, img, property, trailer, date, company, publisher, language, condi, description, evaluation, about) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    var q = "insert into game(name, price, img, property, trailer, date, company, publisher, language, genre, condi, description, evaluation, about) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     conn.query(q, data, function(err, rows){
       if(err) console.error("join router query error : " + err);
       res.redirect('/shop');
