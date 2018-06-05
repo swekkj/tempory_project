@@ -26,7 +26,7 @@ router.post('/', function(req, res, next){
     var q = "insert into user_data(id, passwd, birth, email, property) values(?,?,?,?,?)";
     conn.query(q, data, function(err, rows){
       if(err) console.error("join router query error : " + err);
-      res.redirect('/login');
+      res.redirect('/shop');
       conn.release();
     });
   });
