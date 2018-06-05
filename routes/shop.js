@@ -20,9 +20,22 @@ router.post('/',function(req,res,next){
       var sql = "SELECT passwd FROM user_data where id=?";
       conn.query(sql,[username], function(err, result){
         if(err) console.error("find user err : "+err);
-        if(result.length==0) res.send("not user");
+        if(result.length==0)
+        {
+          conn.query("SELECT * FROM game", function(err,rows){
+            if(err) console.error("query error : " + err);
+            res.render('shop',{title: 'Shop', rows: rows});
+            conn.release();
+          });
+        }
         else if(cmp!=result[0].passwd)  // passwd 찾았고 다름
-        {res.send("passwd error");}
+        {
+          conn.query("SELECT * FROM game", function(err,rows){
+            if(err) console.error("query error : " + err);
+            res.render('shop',{title: 'Shop', rows: rows});
+            conn.release();
+          });
+        }
         else
         {
           conn.query("SELECT * FROM game", function(err,game_rows){
