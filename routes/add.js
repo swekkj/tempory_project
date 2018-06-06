@@ -36,7 +36,7 @@ router.post('/', function(req, res, next){
     var q = "insert into game(name, price, img, property, trailer, date, company, publisher, language, genre, condi, description, evaluation, about) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     conn.query(q, data, function(err, rows){
       if(err) console.error("join router query error : " + err);
-      res.redirect('/shop');
+      res.redirect('/main');
       conn.release();
     });
   });
